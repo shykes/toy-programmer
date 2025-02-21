@@ -1,6 +1,6 @@
 {
   "name": "toy-programmer",
-  "engineVersion": "v0.16.0-010101000000-dev-f4a578c4003b",
+  "engineVersion": "v0.17.0-llm.2",
   "sdk": {
     "source": "go"
   },
@@ -9,6 +9,5 @@
       "name": "toy-workspace",
       "source": "../toy-workspace"
     }
-  ],
-  "source": "."
+  ]
 }

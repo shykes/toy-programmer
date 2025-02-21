@@ -14,7 +14,13 @@ func (m *ToyProgrammer) GoProgram(assignment string) *dagger.Container {
 	after := dag.Llm().
 		WithToyWorkspace(before).
 		WithPromptVar("assignment", assignment).
-		WithPromptFile(dag.CurrentModule().Source().File("prompt.txt")).
+		WithPrompt(`
+You are an expert go programmer. You have access to a workspace.
+Use the read, write, build tools to complete the following assignment.
+Don't stop until your code builds.
+
+Assignment: $assignment
+`).
 		ToyWorkspace()
 	// Return the modified workspace's container
 	return after.Container()
