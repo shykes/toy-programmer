@@ -17,6 +17,7 @@ func (m *ToyProgrammer) GoProgram(assignment string) *dagger.Container {
 		WithPrompt(`
 You are an expert go programmer. You have access to a workspace.
 Use the read, write, build tools to complete the following assignment.
+Do not try to access the container directly.
 Don't stop until your code builds.
 
 Assignment: $assignment
