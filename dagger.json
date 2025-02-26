@@ -7,7 +7,7 @@
   "dependencies": [
     {
       "name": "toy-workspace",
-      "source": "../toy-workspace"
+      "source": "./toy-workspace"
     }
   ]
 }
