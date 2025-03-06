@@ -17,7 +17,7 @@ func (m *ToyProgrammer) GoProgram(
 	result := dag.Llm().
 		WithToyWorkspace(dag.ToyWorkspace().Write("assignment.txt", assignment)).
 		WithPrompt("You are an expert go programmer. You have access to a workspace").
-		WithPrompt("Complete the assignment writte at assignment.txt").
+		WithPrompt("Complete the assignment written at assignment.txt").
 		WithPrompt("Don't stop until the code builds").
 		ToyWorkspace().
 		Container()
