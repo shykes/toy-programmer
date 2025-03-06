@@ -7,7 +7,13 @@ import (
 type ToyProgrammer struct{}
 
 // Write a Go program
-func (m *ToyProgrammer) GoProgram(assignment string, qa bool) *dagger.Container {
+func (m *ToyProgrammer) GoProgram(
+	// The programming assignment
+	// Example: "write me a curl clone"
+	assignment string,
+	// Run LLM-powered QA on the result
+	// +optional
+	qa bool) *dagger.Container {
 	result := dag.Llm().
 		WithToyWorkspace(dag.ToyWorkspace().Write("assignment.txt", assignment)).
 		WithPrompt("You are an expert go programmer. You have access to a workspace").
