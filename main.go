@@ -14,7 +14,7 @@ func (m *ToyProgrammer) GoProgram(
 	// Run LLM-powered QA on the result
 	// +optional
 	qa bool) *dagger.Container {
-	result := dag.Llm().
+	result := dag.LLM().
 		WithToyWorkspace(dag.ToyWorkspace().Write("assignment.txt", assignment)).
 		WithPrompt("You are an expert go programmer. You have access to a workspace").
 		WithPrompt("Complete the assignment written at assignment.txt").
@@ -22,7 +22,7 @@ func (m *ToyProgrammer) GoProgram(
 		ToyWorkspace().
 		Container()
 	if qa {
-		return dag.Llm().
+		return dag.LLM().
 			WithContainer(result).
 			WithPrompt("You are an expert QA engineer. You have access to a container").
 			WithPrompt("There is a go program in the current directory. Build and run it. Understand what it does. Write your findings in QA.md").
