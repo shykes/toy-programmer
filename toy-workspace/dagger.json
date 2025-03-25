@@ -1,6 +1,6 @@
 {
   "name": "toy-workspace",
-  "engineVersion": "v0.15.3",
+  "engineVersion": "v0.17.1",
   "sdk": {
     "source": "go"
   },
